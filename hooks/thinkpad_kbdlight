@@ -1,0 +1,18 @@
+#!/usr/bin/ash
+
+run_hook() {
+  if echo 2 > /proc/acpi/ibm/kbdlight ; then
+    echo "Keyboard backlight turned on!"
+  else
+    echo "Failed to enable keyboard backlight" >2
+  fi
+}
+
+
+run_cleanuphook() {
+  if echo 0 > /proc/acpi/ibm/kbdlight ; then
+    echo "Keyboard backlight turned off!"
+  else
+    echo "Failed to disable keyboard backlight" >2
+  fi
+}

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+build() {
+  add_module thinkpad_acpi
+  if [[ ! -f /proc/acpi/ibm/kbdlight  ]]; then
+    echo "[WARNING] Unable to open /proc/acpi/ibm/kbdlight" >2
+  fi
+  add_runscript
+}
+
+help() {
+cat <<EOF
+When the hook is loaded, the keyboard backlight is turned on by using the
+/proc/acpi/ibm/kbdlight file. As soon as the initrd is exited, backlight
+is turned off again.
+This hook might be usefull for people who like to have an illuminated keyboard
+while entering e.g. the password for they're harddrives.
+EOF
+}
+

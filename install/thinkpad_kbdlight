@@ -11,10 +11,10 @@ build() {
 help() {
 cat <<EOF
 When the hook is loaded, the keyboard backlight is turned on by using the
-/proc/acpi/ibm/kbdlight file. As soon as the initrd is exited, backlight
+/proc/acpi/ibm/kbdlight file. As soon as the initrd is exited, the backlight
 is turned off again.
-This hook might be usefull for people who like to have an illuminated keyboard
-while entering e.g. the password for they're harddrives.
+This hook might be useful for people who like to have an illuminated keyboard
+while entering, e.g. the password for their hard drives.
 EOF
 }
 
